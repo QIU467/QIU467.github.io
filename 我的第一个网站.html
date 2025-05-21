@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>外包242 丘成居·著“野原家族の物语 - 蜡笔小新一家全解析”</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FFD700', // 小新黄色
+                        secondary: '#FF6B6B', // 美伢粉色
+                        tertiary: '#4A6FA5', // 广志蓝色
+                        accent: '#6B4A95', // 小葵紫色
+                        neutral: '#F5F5F5', // 背景色
+                        dark: '#333333', // 文字色
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans SC', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 3s ease-in-out infinite',
+                        'wiggle': 'wiggle 1s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        wiggle: {
+                            '0%, 100%': { transform: 'rotate(-3deg)' },
+                            '50%': { transform: 'rotate(3deg)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .card-hover {
+                transition: all 0.3s ease;
+            }
+            .card-hover:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            }
+        }
+    </style>
+</head>
+<body class="bg-neutral text-dark font-sans">
+    <!-- 导航栏 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-md transition-all duration-300">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <img src="https://picsum.photos/seed/shinchan/40/40" alt="蜡笔小新Logo" class="w-10 h-10 rounded-full object-cover">
+                <span class="text-xl font-bold bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">野原家族の物语</span>
+            </a>
+            
+            <!-- 桌面导航 -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#family" class="font-medium hover:text-primary transition-colors">家族成员</a>
+                <a href="#house" class="font-medium hover:text-primary transition-colors">春日部之家</a>
+                <a href="#gallery" class="font-medium hover:text-primary transition-colors">相册</a>
+                <a href="#funfacts" class="font-medium hover:text-primary transition-colors">趣味小知识</a>
+                <a href="#contact" class="font-medium hover:text-primary transition-colors">留言板</a>
+            </div>
+            
+            <!-- 移动端菜单按钮 -->
+            <button class="md:hidden text-dark focus:outline-none" id="menu-toggle">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- 移动端导航菜单 -->
+        <div class="md:hidden hidden bg-white shadow-lg absolute w-full" id="mobile-menu">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
+                <a href="#family" class="font-medium py-2 hover:text-primary transition-colors">家族成员</a>
+                <a href="#house" class="font-medium py-2 hover:text-primary transition-colors">春日部之家</a>
+                <a href="#gallery" class="font-medium py-2 hover:text-primary transition-colors">相册</a>
+                <a href="#funfacts" class="font-medium py-2 hover:text-primary transition-colors">趣味小知识</a>
+                <a href="#contact" class="font-medium py-2 hover:text-primary transition-colors">留言板</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- 英雄区域 -->
+        <section class="relative h-[70vh] flex items-center justify-center overflow-hidden">
+            <div class="absolute inset-0 z-0">
+                <img src="https://picsum.photos/seed/family/1920/1080" alt="野原一家" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30"></div>
+            </div>
+            <div class="container mx-auto px-4 z-10 text-center">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-white text-shadow mb-4 animate-float">野原家族の物语</h1>
+                <p class="text-[clamp(1rem,2vw,1.5rem)] text-white text-shadow max-w-2xl mx-auto mb-8">
+                    走进野原一家的日常生活，感受欢笑与温情交织的奇妙旅程
+                </p>
+                <a href="#family" class="inline-block bg-primary hover:bg-primary/90 text-dark font-bold py-3 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:shadow-xl">
+                    认识家族成员 <i class="fa-solid fa-arrow-down ml-2 animate-bounce"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- 家族成员介绍 -->
+        <section id="family" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-dark">家族成员</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        野原一家是《蜡笔小新》中的主角家庭，每个成员都有独特的性格和魅力，他们的日常生活充满了欢笑和温馨。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 小新 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/shinchan/400/400" alt="野原新之助" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-primary text-dark font-bold px-3 py-1 rounded-full text-sm">
+                                主角
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-dark">野原新之助</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-sm">5岁</span>
+                                <span class="mx-2">•</span>
+                                <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-sm">向日葵班</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                天真烂漫、调皮捣蛋的幼儿园小孩，喜欢跳屁屁舞，经常做出让人哭笑不得的举动。
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">搞笑</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">天真</span>
+                                <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs">早熟</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 美伢 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/mieko/400/400" alt="野原美伢" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-dark">野原美伢</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">29岁</span>
+                                <span class="mx-2">•</span>
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">家庭主妇</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                野原家的主妇，疼爱家人但脾气暴躁，购物狂，经常为家庭琐事烦恼。
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs">爱操心</span>
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs">善良</span>
+                                <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs">火爆</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 广志 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/hiroshi/400/400" alt="野原广志" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-dark">野原广志</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-sm">35岁</span>
+                                <span class="mx-2">•</span>
+                                <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-sm">上班族</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                野原家的一家之主，在双叶商社工作，喜欢啤酒和美女，有点好色但很爱家庭。
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs">稳重</span>
+                                <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs">努力</span>
+                                <span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs">爱面子</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 小葵 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://picsum.photos/seed/akane/400/400" alt="野原向日葵" class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div class="absolute top-4 right-4 bg-accent text-white font-bold px-3 py-1 rounded-full text-sm">
+                                新成员
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2 text-dark">野原向日葵</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">1岁</span>
+                                <span class="mx-2">•</span>
+                                <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">婴儿</span>
+                            </div>
+                            <p class="text-gray-600 mb-4">
+                                野原家的小女儿，聪明可爱，喜欢看时尚杂志和帅哥照片，性格傲娇。
+                            </p>
+                            <div class="flex space-x-2">
+                                <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs">萌娃</span>
+                                <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs">时尚</span>
+                                <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-xs">傲娇</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 春日部之家 -->
+        <section id="house" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-dark">春日部之家</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        野原一家居住的地方，充满了生活气息和回忆的温馨小窝。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-20 h-20 bg-primary/20 rounded-lg z-0"></div>
+                        <div class="absolute -bottom-4 -right-4 w-20 h-20 bg-secondary/20 rounded-lg z-0"></div>
+                        <img src="https://picsum.photos/seed/house/800/600" alt="野原家外观" class="w-full h-auto rounded-xl shadow-xl relative z-10">
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-dark">野原家的温馨小窝</h3>
+                        <p class="text-gray-600 mb-6">
+                            野原家位于埼玉县春日部市某住宅区，是一栋两层的独栋房屋。虽然不算大，但充满了野原一家的生活气息和回忆。
+                        </p>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start">
+                                <div class="bg-primary/10 p-3 rounded-full mr-4">
+                                    <i class="fa-solid fa-couch text-primary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">客厅</h4>
+                                    <p class="text-gray-600">
+                                        家庭活动的中心，有舒适的沙发、电视和小新最喜欢的游戏机。一家人经常在这里看电视、聊天。
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-secondary/10 p-3 rounded-full mr-4">
+                                    <i class="fa-solid fa-utensils text-secondary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">厨房</h4>
+                                    <p class="text-gray-600">
+                                        美伢施展厨艺的地方，虽然经常因为小新捣乱而状况百出，但总能做出美味的饭菜。
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-tertiary/10 p-3 rounded-full mr-4">
+                                    <i class="fa-solid fa-bed text-tertiary text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">卧室</h4>
+                                    <p class="text-gray-600">
+                                        二楼有父母的主卧和小新的房间，小葵出生后，房间布局也做了一些调整。
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="bg-accent/10 p-3 rounded-full mr-4">
+                                    <i class="fa-solid fa-tree text-accent text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">庭院</h4>
+                                    <p class="text-gray-600">
+                                        虽然不大，但野原一家经常在这里进行户外活动，小白也有自己的小空间。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="#gallery" class="inline-block bg-tertiary hover:bg-tertiary/90 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition-all hover:scale-105 hover:shadow-xl">
+                            查看更多照片 <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 相册 -->
+        <section id="gallery" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-dark">野原一家的相册</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        记录野原一家生活中美好瞬间的相册，充满了欢笑和温馨。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                        <img src="https://picsum.photos/seed/family1/600/400" alt="野原一家合影" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">野原一家的合影</h3>
+                                <p class="text-white/80">在公园的愉快一天</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                        <img src="https://picsum.photos/seed/family2/600/400" alt="新之和小白" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">新之和小白</h3>
+                                <p class="text-white/80">最好的伙伴</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                        <img src="https://picsum.photos/seed/family3/600/400" alt="美伢的购物日" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">美伢的购物日</h3>
+                                <p class="text-white/80">满载而归的快乐</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                        <img src="https://picsum.photos/seed/family4/600/400" alt="广志的加班夜" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">广志的加班夜</h3>
+                                <p class="text-white/80">辛苦工作的上班族</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                        <img src="https://picsum.photos/seed/family5/600/400" alt="小葵的诞生" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">小葵的诞生</h3>
+                                <p class="text-white/80">野原家的新成员</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="group relative overflow-hidden rounded-xl shadow-lg h-64">
+                        <img src="https://picsum.photos/seed/family6/600/400" alt="家庭旅行" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">家庭旅行</h3>
+                                <p class="text-white/80">海边的快乐时光</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 趣味小知识 -->
+        <section id="funfacts" class="py-20 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-dark">趣味小知识</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        关于野原一家你可能不知道的有趣事实和冷知识。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg p-8 relative card-hover">
+                        <div class="absolute -top-4 -right-4 text-5xl text-primary/10 font-bold">01</div>
+                        <h3 class="text-xl font-bold mb-4 text-dark relative z-10">角色灵感来源</h3>
+                        <p class="text-gray-600 mb-4">
+                            野原新之助的角色原型是作者臼井仪人在高中时期的一位同学，这位同学非常早熟，经常说一些让人惊讶的话。
+                        </p>
+                        <div class="bg-primary/10 p-4 rounded-lg">
+                            <p class="text-dark font-medium italic">
+                                "我画小新时，总是想起那位同学，他的言行举止给了我很多灵感。" —— 臼井仪人
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 relative card-hover">
+                        <div class="absolute -top-4 -right-4 text-5xl text-secondary/10 font-bold">02</div>
+                        <h3 class="text-xl font-bold mb-4 text-dark relative z-10">声优趣事</h3>
+                        <p class="text-gray-600 mb-4">
+                            野原新之助的声优是女性演员矢岛晶子，她为了配出小新独特的声音，每天都会练习"装傻"的语气。
+                        </p>
+                        <div class="bg-secondary/10 p-4 rounded-lg">
+                            <p class="text-dark font-medium">
+                                矢岛晶子从1992年开始为小新配音，直到现在，是配音时间最长的角色之一。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 relative card-hover">
+                        <div class="absolute -top-4 -right-4 text-5xl text-tertiary/10 font-bold">03</div>
+                        <h3 class="text-xl font-bold mb-4 text-dark relative z-10">广志的生日</h3>
+                        <p class="text-gray-600 mb-4">
+                            在动画中，野原广志的生日被设定为5月5日，这一天正好是日本的儿童节，也被称为"男孩节"。
+                        </p>
+                        <div class="bg-tertiary/10 p-4 rounded-lg">
+                            <p class="text-dark font-medium">
+                                广志的年龄被设定为35岁，这也是作者臼井仪人创作该角色时的年龄。
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 relative card-hover">
+                        <div class="absolute -top-4 -right-4 text-5xl text-accent/10 font-bold">04</div>
+                        <h3 class="text-xl font-bold mb-4 text-dark relative z-10">小葵的名字</h3>
+                        <p class="text-gray-600 mb-4">
+                            野原向日葵的名字"ひまわり"（Himawari）在日语中是向日葵的意思，象征着阳光和活力。
+                        </p>
+                        <div class="bg-accent/10 p-4 rounded-lg">
+                            <p class="text-dark font-medium">
+                                小葵出生时，野原家原本打算给她取名为"野原柚子"，但最后还是决定用"向日葵"这个名字。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 留言板 -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold mb-4 text-dark">留言板</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        分享你对野原一家的喜爱，或者留下你与《蜡笔小新》的回忆和故事。
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <form class="bg-white rounded-xl shadow-lg p-8">
+                            <div class="mb-6">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">你的名字</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入你的名字">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">电子邮箱</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入你的电子邮箱">
+                            </div>
+                            
+                            <div class="mb-6">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">你的留言</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-colors" placeholder="请输入你想对野原一家说的话..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-dark font-bold py-3 px-6 rounded-lg shadow-lg transform transition-all hover:scale-[1.02] hover:shadow-xl">
+                                提交留言 <i class="fa-solid fa-paper-plane ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div>
+                        <div class="bg-gray-50 rounded-xl shadow-lg p-8 h-full">
+                            <h3 class="text-xl font-bold mb-6 text-dark">粉丝留言精选</h3>
+                            
+                            <div class="space-y-6">
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://picsum.photos/seed/user1/60/60" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                                        <div>
+                                            <h4 class="font-bold text-dark">小明</h4>
+                                            <p class="text-gray-500 text-sm">2025年5月15日</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600">
+                                        野原一家是我童年最美好的回忆，小新的天真烂漫总是能让我忘记烦恼。每当心情不好时，我就会重温《蜡笔小新》，每次都能被逗笑！
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://picsum.photos/seed/user2/60/60" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                                        <div>
+                                            <h4 class="font-bold text-dark">小樱</h4>
+                                            <p class="text-gray-500 text-sm">2025年5月8日</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600">
+                                        最喜欢美伢了！虽然她有时候脾气暴躁，但她对家人的爱是无私的。她的形象让我想起了自己的妈妈，温暖又真实。
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-white rounded-lg p-6 shadow-sm">
+                                    <div class="flex items-center mb-4">
+                                        <img src="https://picsum.photos/seed/user3/60/60" alt="用户头像" class="w-12 h-12 rounded-full object-cover mr-4">
+                                        <div>
+                                            <h4 class="font-bold text-dark">小刚</h4>
+                                            <p class="text-gray-500 text-sm">2025年4月30日</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-600">
+                                        野原家的日常生活看似平凡，但却充满了温情和感动。广志作为上班族的辛苦，美伢作为家庭主妇的付出，都让我感受到了家庭的重要性。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-6">
+                        <img src="https://picsum.photos/seed/shinchan/40/40" alt="蜡笔小新Logo" class="w-10 h-10 rounded-full object-cover">
+                        <span class="text-xl font-bold">野原家族の物语</span>
+                    </div>
+                    <p class="text-gray-400 mb-6">
+                        探索野原一家的日常生活，感受欢笑与温情交织的奇妙旅程。
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa-brands fa-facebook-square text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa-brands fa-twitter-square text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors">
+                            <i class="fa-brands fa-youtube-square text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">快速链接</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#family" class="text-gray-400 hover:text-primary transition-colors">家族成员</a></li>
+                        <li><a href="#house" class="text-gray-400 hover:text-primary transition-colors">春日部之家</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-primary transition-colors">相册</a></li>
+                        <li><a href="#funfacts" class="text-gray-400 hover:text-primary transition-colors">趣味小知识</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">留言板</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">相关资源</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">蜡笔小新官网</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">角色介绍</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">剧集列表</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">剧场版</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">官方周边</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">订阅更新</h4>
+                    <p class="text-gray-400 mb-4">
+                        订阅我们的通讯，获取野原一家的最新动态和独家内容。
+                    </p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="你的电子邮箱" class="px-4 py-2 rounded-l-lg w-full focus:outline-none focus:ring-2 focus:ring-primary/50">
+                            <button type="submit" class="bg-primary hover:bg-primary/90 text-dark font-bold px-4 py-2 rounded-r-lg transition-colors">
+                                订阅
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-gray-400 text-sm">
+                        我们尊重你的隐私，不会向第三方分享你的信息。
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 野原家族の物语 - 蜡笔小新一家全解析. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 滚动时导航栏样式变化
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('py-2');
+                header.classList.remove('py-3');
+                header.classList.add('shadow-lg');
+            } else {
+                header.classList.remove('py-2');
+                header.classList.add('py-3');
+                header.classList.remove('shadow-lg');
+            }
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动菜单
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+    
